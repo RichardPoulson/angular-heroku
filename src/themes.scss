@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-light-blue);
+$custom-app-accent:  mat-palette($mat-light-green);
+$custom-app-warn:    mat-palette($mat-deep-orange);
+$custom-app-theme:   mat-light-theme((
+  color: (
+    primary: $custom-app-primary,
+    accent: $custom-app-accent,
+    warn: $custom-app-warn,
+  )
+));
+
+@include angular-material-theme($custom-app-theme);
+
+// Define an alternate dark theme.
+$dark-primary: mat-palette($mat-deep-purple);
+$dark-accent:  mat-palette($mat-cyan);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme((
+  color: (
+    primary: $dark-primary,
+    accent: $dark-accent,
+    warn: $dark-warn,
+  )
+));
+
+.custom-dark-theme {
+  @include angular-material-color($dark-theme);
+}
