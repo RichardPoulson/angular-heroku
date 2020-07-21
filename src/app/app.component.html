@@ -1,5 +1,13 @@
 <div fxFlexFill fxLayout="column">
-  <app-toolbar></app-toolbar>
-  <app-sidenav fxFlex></app-sidenav>
-  <app-footer class="custom-dark-theme"></app-footer>
+  <app-toolbar
+    title="Home"
+    (menuButtonClicked)="toolbarMenuButtonClicked()"
+    [ngClass]="{'custom-dark-theme': darkMode}"
+  ></app-toolbar>
+  <app-sidenav
+    fxFlex
+    [opened]="drawerOpen"
+    [ngClass]="{'custom-dark-theme': darkMode}"
+  ></app-sidenav>
+  <app-footer [ngClass]="{'custom-dark-theme': darkMode}"></app-footer>
 </div>

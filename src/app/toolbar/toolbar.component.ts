@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,22 +6,13 @@ import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angu
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
-  shortnav = true;
-  
-  @Input() sidenav;
-  
-  @Output()
-  change: EventEmitter<boolean> = new EventEmitter<boolean>();
-
   constructor() { }
+  ngOnInit(): void { }
+  @Input() title: string;
+  @Output() menuButtonClicked: EventEmitter<void> = new EventEmitter();
 
-  ngOnInit(): void {
-  }
-
-  toggle(){
-    this.shortnav = !this.shortnav;
-    console.log("shortnav: " + this.shortnav)
-    this.change.emit(this.shortnav);
+  menuButtonClick() {
+    this.menuButtonClicked.emit();
   }
 
 }

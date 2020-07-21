@@ -6,11 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  showFiller = false;
-  @Input() drawerOpen: boolean;
+  @Input() opened: boolean;
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void { }
 }

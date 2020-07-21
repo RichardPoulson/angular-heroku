@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'angular-heroku';
   drawerOpen: boolean = false;
+  darkMode: boolean = true;
+
+  toolbarMenuButtonClicked() {
+    this.drawerOpen = !this.drawerOpen;
+  }
 }

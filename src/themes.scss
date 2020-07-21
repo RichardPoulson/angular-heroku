@@ -1,22 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/theming';
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();
 
-$custom-app-primary: mat-palette($mat-light-blue);
-$custom-app-accent:  mat-palette($mat-light-green);
-$custom-app-warn:    mat-palette($mat-deep-orange);
-$custom-app-theme:   mat-light-theme((
+
+// LIGHT THEME
+$custom-theme-primary: mat-palette($mat-light-blue);
+$custom-theme-accent:  mat-palette($mat-light-green);
+$custom-theme-warn:    mat-palette($mat-deep-orange);
+$custom-theme:         mat-light-theme((
   color: (
-    primary: $custom-app-primary,
-    accent: $custom-app-accent,
-    warn: $custom-app-warn,
+    primary: $custom-theme-primary,
+    accent: $custom-theme-accent,
+    warn: $custom-theme-warn,
   )
 ));
+@include angular-material-theme($custom-theme);
 
-@include angular-material-theme($custom-app-theme);
-
-// Define an alternate dark theme.
+// DARK THEME
 $dark-primary: mat-palette($mat-deep-purple);
 $dark-accent:  mat-palette($mat-cyan);
 $dark-warn:    mat-palette($mat-deep-orange);
@@ -27,7 +27,35 @@ $dark-theme:   mat-dark-theme((
     warn: $dark-warn,
   )
 ));
-
 .custom-dark-theme {
   @include angular-material-color($dark-theme);
+}
+
+@mixin custom-theme-color($config-or-theme) {
+  // Extract the color configuration in case a theme has been passed.
+  // This allows consumers to either pass a theme object or a color configuration.
+  $config: mat-get-color-config($config-or-theme);
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($config, primary);
+  $accent: map-get($config, accent);
+
+  // Define any styles affected by the theme.
+  .custom-theme {
+    // Use mat-color to extract individual colors from a palette.
+    background-color: mat-color($config);
+    border-color: mat-color($config, A400);
+  }
+}
+
+@mixin custom-theme-typography($config-or-theme) {
+  // Extract the typography configuration in case a theme has been passed.
+  $config: mat-get-typography-config($config-or-theme);
+
+  .custom-theme {
+    font: {
+      family: mat-font-family($config, body-1);
+      size: mat-font-size($config, body-1);
+      weight: mat-font-weight($config, body-1);
+    }
+  }
 }

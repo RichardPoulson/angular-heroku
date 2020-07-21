@@ -1,6 +1,13 @@
 <mat-toolbar color="primary">
-    <button mat-icon-button matTooltip="Info about the action" matTooltipHideDelay="500" aria-label="Icon button with a menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
+  <button
+    mat-icon-button
+    matTooltip="Info about the action"
+    matTooltipHideDelay="500"
+    aria-label="Icon button with a menu icon"
+    (click)="menuButtonClick()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span id="toolbar-title">{{title}}</span>
 </mat-toolbar>
   
