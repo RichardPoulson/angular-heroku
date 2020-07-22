@@ -2,12 +2,15 @@
   <app-toolbar
     title="Home"
     (menuButtonClicked)="toolbarMenuButtonClicked()"
+    (toggleLightDark)="toolbarLightDarkClicked()"
     [ngClass]="{'dark-theme': darkMode}"
+    color="accent"
+    [darkMode] = "darkMode"
   ></app-toolbar>
   <app-sidenav
     fxFlex
     [opened]="drawerOpen"
     [ngClass]="{'dark-theme': darkMode}"
   ></app-sidenav>
-  <app-footer [ngClass]="{'dark-theme': darkMode}"></app-footer>
+  <app-footer class="mat-accent" [ngClass]="{'dark-theme': darkMode}"></app-footer>
 </div>

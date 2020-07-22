@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar [class.mat-primary]="color =='primary'" [class.mat-accent]="color =='accent'">
   <button
     mat-icon-button
     matTooltip="Info about the action"
@@ -9,5 +9,12 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span id="toolbar-title">{{title}}</span>
+  <span class="spacer"></span>
+  <button
+    mat-icon-button
+    (click)="lightDarkClick()"
+  >
+    <mat-icon>brightness_4</mat-icon>
+  </button>
 </mat-toolbar>
   

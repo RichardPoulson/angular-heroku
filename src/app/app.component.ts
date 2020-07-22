@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,13 @@ export class AppComponent {
   title: string = 'angular-heroku';
   drawerOpen: boolean = false;
   darkMode: boolean = false;
+  @Input() color: string;
 
   toolbarMenuButtonClicked() {
     this.drawerOpen = !this.drawerOpen;
+  }
+
+  toolbarLightDarkClicked() {
+    this.darkMode = !this.darkMode;
   }
 }

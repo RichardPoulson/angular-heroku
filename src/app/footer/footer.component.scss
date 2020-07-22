@@ -3,44 +3,55 @@
 @import '../../styles/themes.scss';
 
 @mixin apply-mat-theme($config-or-theme, $background-palette: null) {
-  $config: mat-get-color-config($config-or-theme);
-  $is-dark-theme: map-get($config, is-dark);
-  $primary: map-get($config, primary);
-  $accent: map-get($config, accent);
-
-  @if $is-dark-theme {
-    color: $light-secondary-text;
-    @if $background-palette == primary {
-      background-color: mat-color($primary, 900);
-      border-color: mat-color($primary, A700);
-    } @else if $background-palette == accent {
-      background-color: mat-color($accent, 900);
-      border-color: mat-color($accent, A700);
+    $config: mat-get-color-config($config-or-theme);
+    $is-dark-theme: map-get($config, is-dark);
+    $primary: map-get($config, primary);
+    $accent: map-get($config, accent);
+    
+    @if $is-dark-theme {
+        color: $light-secondary-text;
+        @if $background-palette == primary {
+            background-color: mat-color($primary, darker);
+            border-color: mat-color($primary, A700);
+        } @else if $background-palette == accent {
+            background-color: mat-color($accent, darker);
+            border-color: mat-color($accent, A700);
+        } @else {
+            background-color: mat-color($mat-gray, 900);
+            border-color: mat-color($mat-gray, 900);
+        }
     } @else {
-      background-color: mat-color($mat-gray, 900);
-      border-color: mat-color($mat-gray, 900);
+        color: $dark-secondary-text;
+        @if $background-palette == primary {
+            background-color: mat-color($primary, lighter);
+            border-color: mat-color($primary, A200);
+        } @else if $background-palette == accent {
+            background-color: mat-color($accent, lighter);
+            border-color: mat-color($accent, A200);
+        } @else {
+            background-color: mat-color($mat-gray, lighter);
+            border-color: mat-color($mat-gray, lighter);
+        }
     }
-  } @else {
-    color: $dark-secondary-text;
-    @if $background-palette == primary {
-        background-color: mat-color($primary, 200);
-        border-color: mat-color($primary, A200);
-      } @else if $background-palette == accent {
-        background-color: mat-color($accent, 200);
-        border-color: mat-color($accent, A200);
-      } @else {
-        background-color: whitesmoke;
-        border-color: lightslategray;
-      }
-  }
 }
-
 :host {
-  padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 }
-:host:not(.dark-theme) {
-  @include apply-mat-theme($light-theme, accent);
+:host(.mat-primary):not(.dark-theme) {
+    @include apply-mat-theme($light-theme, primary);
 }
-:host(.dark-theme) {
-  @include apply-mat-theme($dark-theme);
+:host(.mat-accent):not(.dark-theme) {
+    @include apply-mat-theme($light-theme, accent);
+}
+:host:not(.dark-theme):not(.mat-primary):not(.mat-accent) {
+    @include apply-mat-theme($light-theme);
+}
+:host(.dark-theme.mat-primary) {
+    @include apply-mat-theme($dark-theme, primary);
+}
+:host(.dark-theme.mat-accent) {
+    @include apply-mat-theme($dark-theme, accent);
+}
+:host(.dark-theme):not(.mat-primary):not(.mat-accent) {
+    @include apply-mat-theme($dark-theme);
 }
