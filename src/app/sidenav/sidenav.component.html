@@ -1,10 +1,10 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer mode="side" [opened]="opened">
     <nav>
-      <ul>
-        <li><a routerLink="/work-history" routerLinkActive="active">Work History</a></li>
-        <li><a routerLink="/education-history" routerLinkActive="active">Education History</a></li>
-        <li><a routerLink="/project-history" routerLinkActive="active">Project History</a></li>
+      <ul id="router-links">
+        <li><a routerLink="/work-history" routerLinkActive="active" class="mat-subheading-2">Work History</a></li>
+        <li><a routerLink="/education-history" routerLinkActive="active" class="mat-subheading-2">Education History</a></li>
+        <li><a routerLink="/project-history" routerLinkActive="active" class="mat-subheading-2">Project History</a></li>
       </ul>
     </nav>
   </mat-drawer>

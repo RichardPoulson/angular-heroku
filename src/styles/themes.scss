@@ -1,72 +1,9 @@
 @import '~@angular/material/theming';
+@import '../styles/variables.scss';
+
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();
-
-
-// LIGHT THEME
-$light-primary: mat-palette($mat-light-blue);
-$light-accent:  mat-palette($mat-light-green);
-$light-warn:    mat-palette($mat-deep-orange);
-$light-theme:   mat-light-theme((
-  color: (
-    primary: $light-primary,
-    accent: $light-accent,
-    warn: $light-warn,
-  )
-));
 @include angular-material-theme($light-theme);
-
-// DARK THEME
-$dark-primary: mat-palette($mat-deep-purple);
-$dark-accent:  mat-palette($mat-cyan);
-$dark-warn:    mat-palette($mat-deep-orange);
-$dark-theme:   mat-dark-theme((
-  color: (
-    primary: $dark-primary,
-    accent: $dark-accent,
-    warn: $dark-warn,
-  )
-));
 .dark-theme {
   @include angular-material-color($dark-theme);
-}
-
-
-@mixin apply-mat-theme($config-or-theme, $background-palette: null) {
-  $config: mat-get-color-config($config-or-theme);
-  $is-dark-theme: map-get($config, is-dark);
-  $primary: map-get($config, primary);
-  $accent: map-get($config, accent);
-  
-  @if $is-dark-theme {
-      color: $light-secondary-text;
-      @if $background-palette == primary {
-          background-color: mat-color($primary, darker);
-          border-color: mat-color($primary, A700);
-      } @else if $background-palette == accent {
-          background-color: mat-color($accent, darker);
-          border-color: mat-color($accent, A700);
-      } @else {
-          background-color: mat-color($mat-gray, 900);
-          border-color: mat-color($mat-gray, 900);
-      }
-  } @else {
-      color: $dark-secondary-text;
-      @if $background-palette == primary {
-          background-color: mat-color($primary, lighter);
-          border-color: mat-color($primary, A200);
-      } @else if $background-palette == accent {
-          background-color: mat-color($accent, lighter);
-          border-color: mat-color($accent, A200);
-      } @else {
-          background-color: mat-color($mat-gray, lighter);
-          border-color: mat-color($mat-gray, lighter);
-      }
-  }
-}
-
-@mixin apply-theme-color($config-or-theme, $color-palette: primary, $variant: default) {
-  $config: mat-get-color-config($config-or-theme);
-  $palette: map-get($config, $color-palette);
-  color: mat-color($palette, $variant);
 }

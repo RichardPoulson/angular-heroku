@@ -11,5 +11,5 @@
     [opened]="drawerOpen"
     [ngClass]="{'dark-theme': darkMode}"
   ></app-sidenav>
-  <app-footer [ngClass]="{'dark-theme': darkMode}"></app-footer>
+  <app-footer [ngClass]="{'dark-theme': darkMode}" [class.mat-primary]="darkMode != true"></app-footer>
 </div>

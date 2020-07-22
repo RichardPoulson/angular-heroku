@@ -1,6 +1,47 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+:host {
+    a {
+        text-decoration: none;
+    }
+}
+:host:not(.dark-theme) {
+    a:link, a:visited, a:hover, :focus {
+        @include apply-theme-color($light-theme, primary, darker);
+    }
+    a.active {
+        color: $dark-primary-text;
+        @include apply-theme-color-bg($light-theme);
+    }
+}
+:host(.dark-theme) {
+    a:link, a:visited, a:hover, :focus {
+        @include apply-theme-color($dark-theme, primary, lighter);
+    }
+    a.active {
+        color: $light-primary-text;
+        @include apply-theme-color-bg($dark-theme);
+    }
+}
 :host > mat-drawer-container {
     height: 100%;
     mat-drawer, mat-drawer-content {
         padding: 1rem;
+    }
+}
+#router-links {
+    list-style: none;
+    padding-left: unset;
+    margin-top: unset;
+    margin-bottom: unset;
+    a {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+    li {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 }
