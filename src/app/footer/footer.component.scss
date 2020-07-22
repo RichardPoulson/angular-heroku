@@ -2,38 +2,6 @@
 @import '~@angular/material/theming';
 @import '../../styles/themes.scss';
 
-@mixin apply-mat-theme($config-or-theme, $background-palette: null) {
-    $config: mat-get-color-config($config-or-theme);
-    $is-dark-theme: map-get($config, is-dark);
-    $primary: map-get($config, primary);
-    $accent: map-get($config, accent);
-    
-    @if $is-dark-theme {
-        color: $light-secondary-text;
-        @if $background-palette == primary {
-            background-color: mat-color($primary, darker);
-            border-color: mat-color($primary, A700);
-        } @else if $background-palette == accent {
-            background-color: mat-color($accent, darker);
-            border-color: mat-color($accent, A700);
-        } @else {
-            background-color: mat-color($mat-gray, 900);
-            border-color: mat-color($mat-gray, 900);
-        }
-    } @else {
-        color: $dark-secondary-text;
-        @if $background-palette == primary {
-            background-color: mat-color($primary, lighter);
-            border-color: mat-color($primary, A200);
-        } @else if $background-palette == accent {
-            background-color: mat-color($accent, lighter);
-            border-color: mat-color($accent, A200);
-        } @else {
-            background-color: mat-color($mat-gray, lighter);
-            border-color: mat-color($mat-gray, lighter);
-        }
-    }
-}
 :host {
     padding: 0.5rem 1rem;
 }

@@ -4,7 +4,6 @@
     (menuButtonClicked)="toolbarMenuButtonClicked()"
     (toggleLightDark)="toolbarLightDarkClicked()"
     [ngClass]="{'dark-theme': darkMode}"
-    color="accent"
     [darkMode] = "darkMode"
   ></app-toolbar>
   <app-sidenav
@@ -12,5 +11,5 @@
     [opened]="drawerOpen"
     [ngClass]="{'dark-theme': darkMode}"
   ></app-sidenav>
-  <app-footer class="mat-accent" [ngClass]="{'dark-theme': darkMode}"></app-footer>
+  <app-footer [ngClass]="{'dark-theme': darkMode}"></app-footer>
 </div>

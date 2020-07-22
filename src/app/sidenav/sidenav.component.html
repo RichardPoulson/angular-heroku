@@ -1,12 +1,16 @@
 <mat-drawer-container autosize>
   <mat-drawer #drawer mode="side" [opened]="opened">
-    <p>Auto-resizing sidenav</p>
+    <nav>
+      <ul>
+        <li><a routerLink="/work-history" routerLinkActive="active">Work History</a></li>
+        <li><a routerLink="/education-history" routerLinkActive="active">Education History</a></li>
+        <li><a routerLink="/project-history" routerLinkActive="active">Project History</a></li>
+      </ul>
+    </nav>
   </mat-drawer>
   
   <mat-drawer-content>
-    <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-    </button>
+    <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
   
