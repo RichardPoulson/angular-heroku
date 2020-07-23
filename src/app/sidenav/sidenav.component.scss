@@ -1,53 +1,79 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
-
 :host {
-    a {
-        text-decoration: none;
+    & > mat-drawer-container {
+        transition: background-color 666ms ease-in-out;
+        height: 100%;
+        mat-drawer, mat-drawer-content {
+            padding: 1rem;
+            transition: background-color 666ms ease-in-out;
+        }
+    }
+    #router-links {
+        list-style: none;
+        padding-left: unset;
+        margin-top: unset;
+        margin-bottom: unset;
+        a {
+            transition: color 200ms ease-in-out, border-color 666ms ease-in-out;
+            padding-bottom: 1px;
+            outline: none;
+            text-decoration: none;
+            border-bottom: 1px solid;
+        }
+        a:link, a:visited {
+            border-color: rgba($color: #000000, $alpha: 0.0);
+        }
+        li {
+            margin-bottom: 8px;
+        }
     }
 }
 :host:not(.dark-theme) {
-    a:link, a:visited, a:hover, :focus {
-        @include apply-theme-color($light-theme, primary, darker);
+    mat-drawer {
+        background-color: #fff;
+        box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.5);
     }
-    a.active {
-        color: $dark-primary-text;
-        @include apply-theme-color-bg($light-theme);
+    mat-drawer-container, mat-drawer-content {
+        background-color: #eee
+    }
+    #router-links {
+        a {
+            color: mat-theme-color($light-theme);
+        }
+        a:focus {
+            border-color: mat-theme-color($light-theme, primary, darker);
+        }
+        a:hover {
+            color: mat-theme-color($light-theme, primary, darker);
+        }
+        a:active, a.active {
+            border-color: mat-theme-color($light-theme, primary, darker);
+            color: mat-theme-color($light-theme, primary, darker);
+        }
     }
 }
 :host(.dark-theme) {
-    a:link, a:visited, a:hover, :focus {
-        @include apply-theme-color($dark-theme, primary, lighter);
-    }
-    a.active {
-        color: $light-primary-text;
-        @include apply-theme-color-bg($dark-theme, primary, default, 0.33);
-    }
     mat-drawer {
         background-color: #222
     }
-    mat-drawer-content {
+    mat-drawer-container, mat-drawer-content {
         background-color: #111
     }
-}
-:host > mat-drawer-container {
-    height: 100%;
-    mat-drawer, mat-drawer-content {
-        padding: 0.5rem;
+    #router-links {
+        a {
+            color: mat-theme-color($dark-theme, primary, lighter, 0.75);
+        }
+        a:focus {
+            border-color: mat-theme-color($dark-theme, primary, lighter);
+        }
+        a:hover {
+            color: mat-theme-color($dark-theme, primary, lighter);
+        }
+        a:active, a.active {
+            border-color: mat-theme-color($dark-theme, primary, lighter);
+            color: #eee
+        }
     }
 }
-#router-links {
-    list-style: none;
-    padding-left: unset;
-    margin-top: unset;
-    margin-bottom: unset;
-    a {
-        padding: 0.25rem 0.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-    }
-    li {
-        padding-top: 0.33rem;
-        padding-bottom: 0.33rem;
-    }
-}
+

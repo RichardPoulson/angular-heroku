@@ -13,6 +13,11 @@
 :host(.dark-theme) {
     mat-toolbar {
         background-color: #333;
+        transition: background-color 666ms ease-in-out;
         @include apply-theme-color($dark-theme, primary, lighter);
     }
+}
+:host:not(.dark-theme) {
+    z-index: 2;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }

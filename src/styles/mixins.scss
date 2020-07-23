@@ -44,3 +44,9 @@
     $palette: map-get($config, $color-palette);
     background-color: rgba(mat-color($palette, $variant), $opacity);
 }
+
+@function mat-theme-color($config-or-theme, $color-palette: primary, $variant: default, $opacity: 1.0) {
+    $config: mat-get-color-config($config-or-theme);
+    $palette: map-get($config, $color-palette);
+    @return rgba(mat-color($palette, $variant), $opacity);
+}

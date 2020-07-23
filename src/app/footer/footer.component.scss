@@ -4,7 +4,12 @@
 @import '../../styles/mixins.scss';
 
 :host {
+    transition: background-color 666ms ease-in-out;
     padding: 0.5rem 1rem;
+}
+:host:not(.dark-theme) {
+    z-index: 2;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.5);
 }
 :host(.mat-primary):not(.dark-theme) {
     @include apply-mat-theme($light-theme, primary);
@@ -23,6 +28,5 @@
 }
 :host(.dark-theme):not(.mat-primary):not(.mat-accent) {
     background-color: #333;
-    border-right: #444;
     @include apply-theme-color($dark-theme, primary, lighter);
 }
