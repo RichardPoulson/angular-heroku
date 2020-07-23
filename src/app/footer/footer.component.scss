@@ -22,5 +22,7 @@
     @include apply-mat-theme($dark-theme, accent);
 }
 :host(.dark-theme):not(.mat-primary):not(.mat-accent) {
-    @include apply-mat-theme($dark-theme);
+    background-color: #333;
+    border-right: #444;
+    @include apply-theme-color($dark-theme, primary, lighter);
 }

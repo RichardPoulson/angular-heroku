@@ -1,6 +1,6 @@
 <div fxFlexFill fxLayout="column">
   <app-toolbar
-    title="Home"
+    [title]="currentRoute"
     (menuButtonClicked)="toolbarMenuButtonClicked()"
     (toggleLightDark)="toolbarLightDarkClicked()"
     [ngClass]="{'dark-theme': darkMode}"
@@ -10,6 +10,7 @@
     fxFlex
     [opened]="drawerOpen"
     [ngClass]="{'dark-theme': darkMode}"
+    (routeClick)="sidenavRouteClicked($event)"
   ></app-sidenav>
   <app-footer [ngClass]="{'dark-theme': darkMode}" [class.mat-primary]="darkMode != true"></app-footer>
 </div>

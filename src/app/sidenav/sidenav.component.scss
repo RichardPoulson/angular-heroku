@@ -21,13 +21,19 @@
     }
     a.active {
         color: $light-primary-text;
-        @include apply-theme-color-bg($dark-theme);
+        @include apply-theme-color-bg($dark-theme, primary, default, 0.33);
+    }
+    mat-drawer {
+        background-color: #222
+    }
+    mat-drawer-content {
+        background-color: #111
     }
 }
 :host > mat-drawer-container {
     height: 100%;
     mat-drawer, mat-drawer-content {
-        padding: 1rem;
+        padding: 0.5rem;
     }
 }
 #router-links {
@@ -36,12 +42,12 @@
     margin-top: unset;
     margin-bottom: unset;
     a {
-        padding: 0.5rem 1rem;
+        padding: 0.25rem 0.5rem;
         border-radius: 8px;
         text-decoration: none;
     }
     li {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
+        padding-top: 0.33rem;
+        padding-bottom: 0.33rem;
     }
 }

@@ -13,6 +13,7 @@ export class ToolbarComponent implements OnInit {
   @Input() title: string;
   @Output() menuButtonClicked: EventEmitter<void> = new EventEmitter();
   @Output() toggleLightDark: EventEmitter<void> = new EventEmitter();
+  name: string;
 
   menuButtonClick() {
     this.menuButtonClicked.emit();

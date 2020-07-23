@@ -9,6 +9,7 @@ export class AppComponent {
   title: string = 'angular-heroku';
   drawerOpen: boolean = false;
   darkMode: boolean = false;
+  currentRoute: string = 'Home';
   @Input() color: string;
 
   toolbarMenuButtonClicked() {
@@ -17,5 +18,9 @@ export class AppComponent {
 
   toolbarLightDarkClicked() {
     this.darkMode = !this.darkMode;
+  }
+
+  sidenavRouteClicked(route: string) {
+    this.currentRoute = route;
   }
 }

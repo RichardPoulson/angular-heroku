@@ -2,9 +2,27 @@
   <mat-drawer #drawer mode="side" [opened]="opened">
     <nav>
       <ul id="router-links">
-        <li><a routerLink="/work-history" routerLinkActive="active" class="mat-subheading-2">Work History</a></li>
-        <li><a routerLink="/education-history" routerLinkActive="active" class="mat-subheading-2">Education History</a></li>
-        <li><a routerLink="/project-history" routerLinkActive="active" class="mat-subheading-2">Project History</a></li>
+        <li>
+          <a
+            routerLink="/work-history"
+            routerLinkActive="active"
+            class="mat-subheading-2"
+            (click)="routeClicked('Work')"
+          >Work History</a></li>
+        <li>
+          <a
+            routerLink="/education-history"
+            routerLinkActive="active"
+            class="mat-subheading-2"
+            (click)="routeClicked('Education')"
+          >Education History</a></li>
+        <li>
+          <a
+            routerLink="/project-history"
+            routerLinkActive="active"
+            class="mat-subheading-2"
+            (click)="routeClicked('Projects')"
+            >Project History</a></li>
       </ul>
     </nav>
   </mat-drawer>

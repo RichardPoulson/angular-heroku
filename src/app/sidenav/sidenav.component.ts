@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,6 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   @Input() opened: boolean;
+  @Output() routeClick: EventEmitter<string> = new EventEmitter<string>();
   constructor() { }
-  ngOnInit(): void { }
+  ngOnInit() { }
+
+  routeClicked(route: string) {
+    this.routeClick.emit(route);
+  }
 }
