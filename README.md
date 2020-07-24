@@ -1,4 +1,4 @@
-# AngularHeroku
+# AngularHeroku [![Build Status](https://travis-ci.com/RichardPoulson/angular-heroku.svg?branch=master)](https://travis-ci.com/RichardPoulson/angular-heroku)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.3.
 
