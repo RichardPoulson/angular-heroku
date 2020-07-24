@@ -1,20 +1,35 @@
 <mat-toolbar>
   <button
+    *ngIf="!drawerOpen else collapseDrawer"
     mat-icon-button
-    matTooltip="Info about the action"
-    matTooltipHideDelay="500"
+    matTooltip="Expand navigation drawer"
+    matTooltipHideDelay="200"
     aria-label="Icon button with a menu icon"
     (click)="menuButtonClick()"
   >
     <mat-icon>menu</mat-icon>
   </button>
+  <ng-template #collapseDrawer>
+    <button
+      mat-icon-button
+      matTooltip="Collapse navigation drawer"
+      matTooltipHideDelay="200"
+      aria-label="Icon button with a menu icon"
+      (click)="menuButtonClick()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  </ng-template>
   <span id="toolbar-title">{{title}}</span>
   <span class="spacer"></span>
   <button
     mat-icon-button
     (click)="lightDarkClick()"
   >
-    <mat-icon>brightness_4</mat-icon>
+    <mat-icon *ngIf="darkMode else lightTheme">brightness_7</mat-icon>
+    <ng-template #lightTheme>
+      <mat-icon >brightness_3</mat-icon>
+    </ng-template>
   </button>
 </mat-toolbar>
   

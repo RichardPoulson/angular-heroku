@@ -3,11 +3,11 @@
 
 :host {
     & > mat-drawer-container {
-        transition: background-color 666ms ease-in-out;
+        transition: trans-color-bgcolor();
         height: 100%;
         mat-drawer, mat-drawer-content {
             padding: 1rem;
-            transition: background-color 666ms ease-in-out;
+            transition: trans-color-bgcolor();
         }
     }
     #router-links {
@@ -16,7 +16,7 @@
         margin-top: unset;
         margin-bottom: unset;
         a {
-            transition: color 200ms ease-in-out, border-color 666ms ease-in-out;
+            transition: trans-color-bgcolor(), border-color 500ms ease-in-out;
             padding-bottom: 1px;
             outline: none;
             text-decoration: none;
@@ -27,13 +27,25 @@
         }
         li {
             margin-bottom: 8px;
+            &::after {
+                padding-left: 1ch;
+                //content: '⬅';
+                content: '⇽';
+                opacity: 0;
+                transition: opacity 500ms ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
 :host:not(.dark-theme) {
     mat-drawer {
         background-color: #fff;
-        box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.5);
+        box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.4);
     }
     mat-drawer-container, mat-drawer-content {
         background-color: #eee
@@ -52,6 +64,9 @@
             border-color: mat-theme-color($light-theme, primary, darker);
             color: mat-theme-color($light-theme, primary, darker);
         }
+        li::after {
+            color: mat-theme-color($light-theme, primary, darker);
+        }
     }
 }
 :host(.dark-theme) {
@@ -63,7 +78,7 @@
     }
     #router-links {
         a {
-            color: mat-theme-color($dark-theme, primary, lighter, 0.75);
+            color: mat-theme-color($dark-theme, primary, lighter, 0.66);
         }
         a:focus {
             border-color: mat-theme-color($dark-theme, primary, lighter);
@@ -74,6 +89,9 @@
         a:active, a.active {
             border-color: mat-theme-color($dark-theme, primary, lighter);
             color: #eee
+        }
+        li::after {
+            color: mat-theme-color($dark-theme, primary, lighter);
         }
     }
 }

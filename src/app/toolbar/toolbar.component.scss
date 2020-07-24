@@ -12,38 +12,43 @@
         flex: 1 1 auto;
     }
     mat-toolbar {
-        transition: background-color 666ms ease-in-out;
+        transition: trans-color-bgcolor();
     }
 }
 :host(.dark-theme) {
+    mat-icon {
+        color: mat-theme-color($dark-theme, primary, lighter);
+    }
     mat-toolbar {
         background-color: #333;
-        color: mat-theme-color($dark-theme, primary, lighter);
+        color: mat-theme-color($dark-theme, primary, lighter, 0.66);
     }
 }
 :host:not(.dark-theme) {
     z-index: 2;
     position: relative; /* For positioning the pseudo-element */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.25);
+        opacity: 0; // Hidden by default.
+        transition: opacity 500ms;
+    }
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
     mat-toolbar {
         background-color: mat-theme-color($light-theme);
-        color: $light-primary-text;
+        color: $light-secondary-text;
     }
-}
-:host:not(.dark-theme)::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    content: '';
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
-    /* Hidden by default. */
-    opacity: 0;
-    transition: opacity 500ms;
-}
-:host:not(.dark-theme):hover {
-    &::before {
-        opacity: 1;
+    mat-icon {
+        color: $light-primary-text;
     }
 }

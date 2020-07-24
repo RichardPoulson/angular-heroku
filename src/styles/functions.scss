@@ -5,3 +5,7 @@
     $palette: map-get($config, $color-palette);
     @return rgba(mat-color($palette, $variant), $opacity);
 }
+
+@function trans-color-bgcolor() { // For setting transition property values (bg, color)
+    @return background-color 400ms linear, color 400ms linear;
+}
