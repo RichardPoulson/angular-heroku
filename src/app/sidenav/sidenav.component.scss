@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import '../../styles/functions.scss';
+
 :host {
     & > mat-drawer-container {
         transition: background-color 666ms ease-in-out;

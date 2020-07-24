@@ -1,23 +1,49 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
 @import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import '../../styles/functions.scss';
 
-#toolbar-title {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-:host .spacer {
-    flex: 1 1 auto;
+:host {
+    #toolbar-title {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }
+    mat-toolbar {
+        transition: background-color 666ms ease-in-out;
+    }
 }
 :host(.dark-theme) {
     mat-toolbar {
         background-color: #333;
-        transition: background-color 666ms ease-in-out;
-        @include apply-theme-color($dark-theme, primary, lighter);
+        color: mat-theme-color($dark-theme, primary, lighter);
     }
 }
 :host:not(.dark-theme) {
     z-index: 2;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative; /* For positioning the pseudo-element */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    mat-toolbar {
+        background-color: mat-theme-color($light-theme);
+        color: $light-primary-text;
+    }
+}
+:host:not(.dark-theme)::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+    /* Hidden by default. */
+    opacity: 0;
+    transition: opacity 500ms;
+}
+:host:not(.dark-theme):hover {
+    &::before {
+        opacity: 1;
+    }
 }

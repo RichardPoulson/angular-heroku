@@ -8,12 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ToolbarComponent implements OnInit {
   constructor() { }
   ngOnInit(): void { }
-  @Input() color: string;
   @Input() darkMode: boolean;
   @Input() title: string;
   @Output() menuButtonClicked: EventEmitter<void> = new EventEmitter();
   @Output() toggleLightDark: EventEmitter<void> = new EventEmitter();
-  name: string;
 
   menuButtonClick() {
     this.menuButtonClicked.emit();
