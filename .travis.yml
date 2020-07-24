@@ -1,18 +1,26 @@
 sudo: required
 language: node_js
 node_js:
-  - stable
+- stable
 branches:
   only:
-    - master
+  - master
 addons:
   chrome: stable
 services:
-  - xvfb
+- xvfb
 before_script:
-  - export DISPLAY=:99.0
-  - npm install -g @angular/cli
-  - npm install -g karma karma-chrome-launcher
-  - npm install
+- export DISPLAY=:99.0
+- npm install -g @angular/cli
+- npm install -g karma karma-chrome-launcher
+- npm install
 script:
-  - ng test --karma-config karma.container.conf.js
+- ng test --karma-config karma.container.conf.js
+deploy:
+  provider: heroku
+  api_key:
+    secure: LqokklxCHuGq1BjW5jue0FAQXdy1ZX4se5dy+WTiktRqCqMJW1WJNDYelYzgM8J2OMPgpjMM4NZ3ZV7VlQCiSrv66ApEwE3qCDT9BsyydK3CSBt7/oLuiwFgle37WnghtvK3/UiiLkszARmqwG3YQH0MCmyEBKZLZtNHi4VYYvQofsj24dItmxPo4edmsWMyaJh10R50u5C9HwJluu/2M0AMzAYaHQGsk0lOztcf3HWZl+jpXS5P0X4CiUdy4XBa4ClH5AvVBTe0XpihTGNLV/9y3MTd0kf8Kg05r5sCohLfjmgPi+TkmUYp9PGNFZgDwCsZ9rEtYec5XPR9meXlPzrDha5QBoU0qa4PzF/edNzGlLBCDmv7yG3Du5PZFmkeCFjYf6fbs5ldZdiFXnctKUmjJmeqU179nj9xNHU+dtpMRIiBzeUdY5f9C+XFFhlgFzggp+P6iBiHV3dghICTfoRhrESpO/i/qRjuqPpZ5N8KWQJeNYQUQkj6pXd6QDI9du5QsNJbpA1K+xTxM6L2KchKtR7y6eqmdCeqyugYMZ928XTE8aqebP9nKBsDhuRUSoQSbSgXUVtwQ9oAcrw3ODv9j9AIS09TYMoUtSppChANjzv3Rer08Hf5fFu7oNde+emjHjB5OMVbW6JIWC3GKRpgudP83krtiKtJ1ZF1EmU=
+  app: angular-heroku
+  on:
+    repo: RichardPoulson/angular-heroku
+  skip_cleanup: 'true'
