@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as workData from '../../assets/work-data.json';
 
 @Component({
   selector: 'app-work-history',
@@ -11,5 +12,7 @@ export class WorkHistoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  data = (workData as any).default;
 
 }

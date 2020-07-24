@@ -6,6 +6,9 @@ import { ProjectHistoryComponent } from '../project-history/project-history.comp
 import { HomeComponent } from '../home/home.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserModule } from '@angular/platform-browser';
+import { WorkHistoryModule } from '../work-history/work-history.module';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,7 +22,9 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    FlexLayoutModule
+    FlexLayoutModule,
+    BrowserModule,
+    WorkHistoryModule
   ],
   exports: [RouterModule],
   declarations: [HomeComponent, PageNotFoundComponent]
