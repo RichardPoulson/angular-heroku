@@ -20,5 +20,5 @@ console.log('View web app by opening URL http://localhost:' +
 (process.env.PORT || defaultListeningPort.toString()) + ' in your web browser.');
 
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/angular-heroku/index.html'));
 });
