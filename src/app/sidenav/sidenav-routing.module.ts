@@ -7,16 +7,18 @@ import { HomeComponent } from '../home/home.component';
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkHistoryModule } from '../work-history/work-history.module';
 
 
+
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'work-history', component: WorkHistoryComponent },
-  { path: 'education-history', component: EducationHistoryComponent },
-  { path: 'project-history', component: ProjectHistoryComponent },
+  { path: 'home', component: HomeComponent, data: {animation: 'HomePage'} },
+  { path: 'work-history', component: WorkHistoryComponent, data: {animation: 'WorkHistoryPage'} },
+  { path: 'education-history', component: EducationHistoryComponent, data: {animation: 'EducationHistoryPage'} },
+  { path: 'project-history', component: ProjectHistoryComponent, data: {animation: 'ProjectHistoryPage'} },
   { path: '',   redirectTo: '/home', pathMatch: 'full' }, // redirect to Home
-  { path: '**', component: PageNotFoundComponent },  // Wildcard route for a 404 page
+  { path: '**', component: PageNotFoundComponent, data: {animation: 'PageNotFound'} },  // Wildcard route for a 404 page
 ];
 
 @NgModule({
@@ -24,6 +26,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FlexLayoutModule,
     BrowserModule,
+    BrowserAnimationsModule,
     WorkHistoryModule
   ],
   exports: [RouterModule],

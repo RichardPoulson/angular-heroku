@@ -1,4 +1,11 @@
+@import '~@angular/material/theming';
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
 :host {
+    mat-card, mat-card-subtitle {
+        transition: trans-color-bgcolor();
+    }
     mat-card {
         margin: 1rem;
         max-width: 400px;
