@@ -11,6 +11,9 @@
         mat-drawer, mat-drawer-content {
             transition: trans-color-bgcolor();
         }
+        mat-drawer-content {
+            overflow-x: hidden; // need so that page transition doesn't show scrollbar
+        }
     }
     #router-links {
         list-style: none;
