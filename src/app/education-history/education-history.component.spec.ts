@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { EducationHistoryModule } from './education-history.module';
 import { EducationHistoryComponent } from './education-history.component';
 
 describe('EducationHistoryComponent', () => {
@@ -8,6 +8,7 @@ describe('EducationHistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [EducationHistoryModule],
       declarations: [ EducationHistoryComponent ]
     })
     .compileComponents();
