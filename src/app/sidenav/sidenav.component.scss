@@ -4,7 +4,7 @@
 :host {
     mat-drawer-container {
         transition: trans-color-bgcolor();
-        height: calc(100vh - #{$toolbar-height} - #{$footer-height});
+        //height: calc(100vh - #{$toolbar-height} - #{$footer-height});
         mat-drawer {
             padding: 1rem; // don't add padding to mat-drawer-content, or it messes with scrollbar
         }
@@ -80,6 +80,9 @@
     }
     mat-drawer-container, mat-drawer-content {
         background-color: #111
+    }
+    .mat-drawer-backdrop.mat-drawer-shown {
+        background-color: rgba(189, 189, 189, 0.1);
     }
     #router-links {
         a {

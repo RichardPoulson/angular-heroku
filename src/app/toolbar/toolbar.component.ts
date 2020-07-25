@@ -10,13 +10,12 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void { }
   @Input() darkMode: boolean;
   @Input() title: string;
+  @Input() drawerOpen: boolean;
   @Output() menuButtonClicked: EventEmitter<void> = new EventEmitter();
   @Output() toggleLightDark: EventEmitter<void> = new EventEmitter();
-  drawerOpen: boolean = false;
 
   menuButtonClick() {
     this.menuButtonClicked.emit();
-    this.drawerOpen = !this.drawerOpen;
   }
 
   lightDarkClick() {

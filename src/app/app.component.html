@@ -5,11 +5,13 @@
     (toggleLightDark)="toolbarLightDarkClicked()"
     [ngClass]="{'dark-theme': darkMode}"
     [darkMode] = "darkMode"
+    [drawerOpen] = "drawerOpen"
   ></app-toolbar>
   <app-sidenav
     [opened]="drawerOpen"
     [ngClass]="{'dark-theme': darkMode}"
     (routeClick)="sidenavRouteClicked($event)"
+    (close)="closeSidenav()"
   ></app-sidenav>
   <app-footer [ngClass]="{'dark-theme': darkMode}"></app-footer>
 </div>

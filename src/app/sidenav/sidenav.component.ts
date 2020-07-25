@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slideInAnimation } from './animations/slide-in-animation';
 
@@ -12,8 +12,12 @@ import { slideInAnimation } from './animations/slide-in-animation';
 export class SidenavComponent implements OnInit {
   @Input() opened: boolean;
   @Output() routeClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() close: EventEmitter<void> = new EventEmitter<void>();
   constructor() { }
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
+  tempValue: string = 'empty';
 
   routeClicked(route: string) {
     this.routeClick.emit(route);
@@ -22,4 +26,6 @@ export class SidenavComponent implements OnInit {
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation'];
   }
+
+  
 }
