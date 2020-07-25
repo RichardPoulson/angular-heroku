@@ -2,11 +2,13 @@
 @import '../../styles/functions.scss';
 
 :host {
-    & > mat-drawer-container {
+    mat-drawer-container {
         transition: trans-color-bgcolor();
-        height: 100%;
+        height: calc(100vh - #{$toolbar-height} - #{$footer-height});
+        mat-drawer {
+            padding: 1rem; // don't add padding to mat-drawer-content, or it messes with scrollbar
+        }
         mat-drawer, mat-drawer-content {
-            padding: 1rem;
             transition: trans-color-bgcolor();
         }
     }

@@ -23,3 +23,6 @@ $dark-theme:   mat-dark-theme((
     warn: $dark-warn,
   )
 ));
+
+$toolbar-height: 64px; // used to set max-height for mat-drawer-content
+$footer-height: 40px; 

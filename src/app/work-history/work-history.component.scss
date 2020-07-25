@@ -3,6 +3,9 @@
 @import '../../styles/functions.scss';
 
 :host {
+    #work-history-container {
+        padding-bottom: 32px;
+    }
     mat-card, mat-card-subtitle {
         transition: trans-color-bgcolor(), transform 500ms ease-in-out;
     }

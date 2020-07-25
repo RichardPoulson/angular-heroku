@@ -9,6 +9,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkHistoryModule } from '../work-history/work-history.module';
+import { EducationHistoryModule } from '../education-history/education-history.module';
 
 
 
@@ -27,7 +28,8 @@ const routes: Routes = [
     FlexLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
-    WorkHistoryModule
+    WorkHistoryModule,
+    EducationHistoryModule
   ],
   exports: [RouterModule],
   declarations: [HomeComponent, PageNotFoundComponent]

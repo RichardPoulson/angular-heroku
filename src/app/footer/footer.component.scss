@@ -4,16 +4,30 @@
 @import '../../styles/functions.scss';
 
 :host {
-    transition: trans-color-bgcolor();
-    padding: 0.5rem 1rem;
+    #footer {
+        z-index: 1; // for box-shadow
+        position: relative;
+        width: 100%;
+        transition: trans-color-bgcolor();
+        height: $footer-height;
+        text-align: center;
+        vertical-align: middle;
+        & * {
+            vertical-align: middle;
+        }
+        
+    }    
 }
 :host:not(.dark-theme) {
-    z-index: 1;
-    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.5);
-    background-color: mat-theme-color($light-theme);
-    color: $light-secondary-text;
+    #footer {
+        box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.5);
+        background-color: mat-theme-color($light-theme);
+        color: $light-secondary-text;
+    }
 }
 :host(.dark-theme) {
-    background-color: #333;
-    color: mat-theme-color($dark-theme, primary, lighter);
+    #footer {
+        background-color: #333;
+        color: mat-theme-color($dark-theme, primary, lighter);
+    }
 }

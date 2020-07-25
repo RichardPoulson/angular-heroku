@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as educationData from '../../assets/education-data.json';
 
 @Component({
   selector: 'app-education-history',
@@ -11,5 +12,7 @@ export class EducationHistoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  data = (educationData as any).default;
 
 }

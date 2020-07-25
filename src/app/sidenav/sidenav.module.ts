@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { SidenavRoutingModule } from './sidenav-routing.module';
 import { SidenavComponent } from './sidenav.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -13,7 +14,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   imports: [
     CommonModule,
     SidenavRoutingModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FlexLayoutModule
   ],
   exports: [
     SidenavComponent

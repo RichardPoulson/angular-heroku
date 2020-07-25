@@ -1,0 +1,36 @@
+@import '~@angular/material/theming';
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+
+:host {
+    mat-card, mat-card-subtitle {
+        transition: trans-color-bgcolor(), transform 500ms ease-in-out;
+    }
+    mat-card {
+        margin: 1rem;
+    }
+    ul {
+        padding-left: 2ch;
+    }
+}
+:host:not(.dark-theme) {
+    mat-card {
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+            box-shadow: 6px 6px 16px 0 rgba(0, 0, 0, 0.5);
+            opacity: 0; // Hidden by default.
+            transition: opacity 500ms;
+        }
+        &:hover {
+            transform: scale(1.05);
+            &::before {
+                opacity: 1;
+            }
+        }
+    }
+}

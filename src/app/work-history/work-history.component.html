@@ -1,4 +1,4 @@
-<div fxFlexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+<div id="work-history-container" flexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
     <mat-card *ngFor="let employment of data; index as i;" fxFlex.lt-sm="100" fxFlex.sm="75" fxFlex.md="45" fxFlex.gt-md="30">
         <mat-card-header>
           <mat-card-title>{{employment.title}}</mat-card-title>
@@ -15,6 +15,4 @@
         </mat-card-actions>
     </mat-card>
 </div>
-
-
   
