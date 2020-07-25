@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {MatCardModule} from '@angular/material/card';
 import { WorkHistoryComponent } from './work-history.component';
 
 describe('WorkHistoryComponent', () => {
@@ -8,6 +8,7 @@ describe('WorkHistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatCardModule],
       declarations: [ WorkHistoryComponent ]
     })
     .compileComponents();
