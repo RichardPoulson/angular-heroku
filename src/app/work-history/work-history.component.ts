@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as workData from '../../assets/work-data.json';
+import * as workData from '../../assets/json/work-data.json';
 
 @Component({
   selector: 'app-work-history',

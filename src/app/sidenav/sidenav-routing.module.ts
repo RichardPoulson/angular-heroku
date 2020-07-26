@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WorkHistoryModule } from '../work-history/work-history.module';
 import { EducationHistoryModule } from '../education-history/education-history.module';
+import { ProjectHistoryModule } from '../project-history/project-history.module';
 
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     WorkHistoryModule,
-    EducationHistoryModule
+    EducationHistoryModule,
+    ProjectHistoryModule
   ],
   exports: [RouterModule],
   declarations: [HomeComponent, PageNotFoundComponent]

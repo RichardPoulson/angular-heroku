@@ -8,7 +8,7 @@
       "Systems Administration: virtual private servers (web app, VPN server, SQL, Apache), Linux (Ubuntu Server, CentOS), network (office, VPN), single-board computers (configuration/deployment, services, databases, VPN).",
       "Database Administration: MySQL, MariaDB, cybersecurity (SSL/TLS), multi-source replication."
     ],
-    "image": "assets/universal-controls.jpg"
+    "image": "assets/media/universal-controls.jpg"
   },
   {
     "title": "Design Center Colorado",
@@ -18,7 +18,7 @@
       "On team of nine senior engineering students (CS + ME + EE), client was Siemens Gamesa Renewable Energy who invested over $15,000 towards the development of a damage/defect testing system for wind turbine blades. System was mounted on industry-grade drone to allow remote control.",
       "Worked with team and stakeholders to determine/define system requirements, researched available technology/solutions, developed prototype system, got client approval for design plan, developed software services/programs for single-board computer/controller (e.g. data buffering/logging, sensor IO), wrote technical documentation for developers and operators, interfaced computer with sensor modules (GPS, IMU, LIDAR) and IR camera, tested system/drone at NREL site, presented system at Senior Design Expo."
     ],
-    "image": "assets/design-center-co.jpg",
+    "image": "assets/media/design-center-co.jpg",
     "links": [
       { "title": "Design Center Colorado", "url": "https://www.colorado.edu/designcenter/" },
       { "title": "Magazine Article", "url": "https://www.colorado.edu/mechanical/2019/04/22/siemens-gamesa-partners-cu-students-develop-drone-based-monitoring-system-wind-turbines" },
@@ -35,7 +35,7 @@
       "Helped resolve networking issues such as physical connectivity, OS configuration and VPN security requirements.",
       "Migrated users from Windows XP to Windows 7."
     ],
-    "image": "assets/west-safety-services.jpg"
+    "image": "assets/media/west-safety-services.jpg"
   },
   {
     "title": "University of Colorado Boulder",
@@ -49,7 +49,7 @@
       "Helped resolve networking issues such as physical connectivity, OS configuration and VPN security requirements.",
       "Migrated users from Windows XP to Windows 7"
     ],
-    "image": "assets/cu-boulder.jpeg"
+    "image": "assets/media/cu-boulder.jpeg"
   },
   {
     "title": "Arizona State University",
@@ -62,7 +62,7 @@
       "Recommended and created quotes for new equipment based on user’s needs and requests.",
       "Worked with 3rd party vendors for warranty replacements."
     ],
-    "image": "assets/arizona_state_university.jpg"
+    "image": "assets/media/arizona_state_university.jpg"
   },
   {
     "title": "Blue Ridge High School",
@@ -73,6 +73,6 @@
       "Responsible for creating and deploying system images, managing user accounts and administrating Active Directory and Group Policy.",
       "Resolved hardware, software, networking and printer issues via phone, email, remotely and in person."
     ],
-    "image": "assets/blue-ridge-school-district.jpg"
+    "image": "assets/media/blue-ridge-school-district.jpg"
   }
 ]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as educationData from '../../assets/education-data.json';
+import * as educationData from '../../assets/json/education-data.json';
 
 @Component({
   selector: 'app-education-history',

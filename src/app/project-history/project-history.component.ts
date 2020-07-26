@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as projectData from '../../assets/json/project-data.json';
 
 @Component({
   selector: 'app-project-history',
@@ -11,5 +12,7 @@ export class ProjectHistoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  data = (projectData as any).default;
 
 }

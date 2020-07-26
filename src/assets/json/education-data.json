@@ -5,7 +5,7 @@
     "gpa": "GPA: 3.68",
     "summary": "8/2015 – 5/2019",
     "details": null,
-    "image": "assets/cu-boulder.jpeg"
+    "image": "assets/media/cu-boulder.jpeg"
   },
   {
     "title": "Front Range Community College",
@@ -13,7 +13,7 @@
     "gpa": "GPA: 3.85",
     "summary": "5/2014 – 5/2015",
     "details": null,
-    "image": "assets/front-range-community-college.jpg"
+    "image": "assets/media/front-range-community-college.jpg"
   },
   {
     "title": "Blue Ridge High School",
@@ -21,6 +21,6 @@
     "gpa": "GPA: 3.19",
     "summary": "8/1996 – 5/2000",
     "details": null,
-    "image": "assets/blue-ridge-school-district.jpg"
+    "image": "assets/media/blue-ridge-school-district.jpg"
   }
 ]
