@@ -27,7 +27,7 @@
             transition: opacity 500ms;
         }
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.01);
             &::before {
                 opacity: 1;
             }

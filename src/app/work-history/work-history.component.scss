@@ -6,7 +6,7 @@
     #work-history-container {
         padding-bottom: 32px;
     }
-    mat-card, mat-card-subtitle {
+    mat-card, mat-card-subtitle, .mat-expansion-panel, mat-panel-description {
         transition: trans-color-bgcolor(), transform 500ms ease-in-out;
     }
     mat-card {
@@ -31,7 +31,7 @@
             transition: opacity 500ms;
         }
         &:hover {
-            transform: scale(1.05);
+            transform: scale(1.01);
             &::before {
                 opacity: 1;
             }
