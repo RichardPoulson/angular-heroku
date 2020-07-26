@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ProjectHistoryModule } from './project-history.module';
 import { ProjectHistoryComponent } from './project-history.component';
 
 describe('ProjectHistoryComponent', () => {
@@ -8,6 +9,7 @@ describe('ProjectHistoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ ProjectHistoryModule ],
       declarations: [ ProjectHistoryComponent ]
     })
     .compileComponents();
