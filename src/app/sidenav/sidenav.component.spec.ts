@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SidenavRoutingModule } from './sidenav-routing.module';
 import { SidenavModule } from './sidenav.module';
 import { SidenavComponent } from './sidenav.component';
-import { slideInAnimation } from './animations/slide-in-animation';
+import { slideInAnimation } from '../animations/slide-in-animation';
 
 describe('SidenavComponent', () => {
   let component: SidenavComponent;

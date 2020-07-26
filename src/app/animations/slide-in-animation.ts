@@ -13,16 +13,20 @@ export const slideInAnimation =
           width: '100%'
         }),
       ], { optional: true }), // optional needed for ng test
+      // Without this query, expansion panels are expanded during animation
+      query('.mat-expansion-panel-content', [
+        style({ display: 'none' }),
+      ], { optional: true }), // optional needed for ng test
       query(':enter', [
         style({ left: '-100%', opacity: 0 })
       ], { optional: true }),
       query(':leave', animateChild(), { optional: true }),
       group([
         query(':leave', [
-          animate('500ms ease-out', style({ left: '100%', opacity: 0 }))
+          animate('700ms ease-out', style({ left: '100%', opacity: 0 }))
         ], { optional: true }),
         query(':enter', [
-          animate('500ms ease-out', style({ left: '0%', opacity: 1 }))
+          animate('700ms ease-out', style({ left: '0%', opacity: 1 }))
         ], { optional: true })
       ]),
       query(':enter', animateChild(), { optional: true }),

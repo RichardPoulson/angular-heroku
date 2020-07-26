@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { slideInAnimation } from './animations/slide-in-animation';
+import { slideInAnimation } from '../animations/slide-in-animation';
 
 
 @Component({
@@ -17,7 +17,6 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
     
   }
-  tempValue: string = 'empty';
 
   routeClicked(route: string) {
     this.routeClick.emit(route);

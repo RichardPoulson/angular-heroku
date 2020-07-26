@@ -1,21 +1,36 @@
-<div fxFlexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+<div id="work-history-container" flexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
   <mat-card *ngFor="let institution of data; index as i;" fxFlex.lt-sm="100" fxFlex.sm="75" fxFlex.md="45" fxFlex.gt-md="30">
+    
     <mat-card-header>
       <mat-card-title>{{institution.title}}</mat-card-title>
       <mat-card-subtitle>{{institution.subheader}}</mat-card-subtitle>
-      <mat-card-subtitle>{{institution.gpa}}</mat-card-subtitle>
+      <mat-card-subtitle>{{institution.summary}}</mat-card-subtitle>
     </mat-card-header>
+
     <img mat-card-image [src]="institution.image">
-    <div *ngIf="institution.details">
-      <mat-card-content >
-        <ul *ngFor="let detail of institution.list; index as j;">
-          <li>{{detail}}</li>
-        </ul>
-      </mat-card-content>
-    </div>
+
+    <mat-card-content>
+      <div *ngIf="institution.details">
+        <!--  [@.disabled]="true" keeps expansion panel closed during view transitions, otherwise expanded during animation -->
+        <mat-expansion-panel [@.disabled]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-description>Details</mat-panel-description>
+          </mat-expansion-panel-header>
+          <ul *ngFor="let detail of institution.details; index as j;">
+            <li>{{detail}}</li>
+          </ul>
+        </mat-expansion-panel>
+      </div>
+    </mat-card-content>
+
     <div *ngIf="institution.links">
-      <mat-card-actions></mat-card-actions>
+      <mat-card-actions>
+        <div flexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+          <a *ngFor="let link of institution.links; index as k;" mat-raised-button href="{{link.url}}" target="_blank" color="primary">{{link.title}}</a>
+        </div>
+      </mat-card-actions>
     </div>
+
   </mat-card>
 </div>
   
