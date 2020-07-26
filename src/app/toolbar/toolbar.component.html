@@ -1,4 +1,4 @@
-<mat-toolbar id="toolbar">
+<mat-toolbar id="toolbar" [ngClass]="{'mat-primary': !darkMode}">
   <button
     *ngIf="!drawerOpen else collapseDrawer"
     mat-icon-button
@@ -6,6 +6,7 @@
     matTooltipHideDelay="200"
     aria-label="Icon button with a menu icon"
     (click)="menuButtonClick()"
+    [ngClass]="{'mat-primary': darkMode}"
   >
     <mat-icon>menu</mat-icon>
   </button>
@@ -16,6 +17,7 @@
       matTooltipHideDelay="200"
       aria-label="Icon button with a menu icon"
       (click)="menuButtonClick()"
+      [ngClass]="{'mat-primary': darkMode}"
   >
     <mat-icon>close</mat-icon>
     </button>
@@ -25,6 +27,7 @@
   <button
     mat-icon-button
     (click)="lightDarkClick()"
+    [ngClass]="{'mat-primary': darkMode}"
   >
     <mat-icon *ngIf="darkMode else lightTheme">brightness_7</mat-icon>
     <ng-template #lightTheme>

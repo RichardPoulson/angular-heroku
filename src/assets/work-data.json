@@ -4,9 +4,9 @@
     "subheader": "Programmer",
     "summary": "6/2019 – 3/2020",
     "details": [
-      "Software Development: React web application (dashboard UI, SQL), .NET solutions (Gmail API, Entity Framework, SQL), IoT, logic controllers, human-machine interfaces.",
-      "Systems Administration: edge computers (configuration/deployment, database, VPN), network administrator (office, VPN), server administrator (Windows, Ubuntu, CentOS), virtual private servers (Certificate Authority, VPN server, SQL, Apache), office computers and printers/plotters.",
-      "Database Administration: MySQL, MariaDB, SSL/TLS, multi-source replication, stored procedures."
+      "Software Development: services (.NET, Node.js, SQL, 3rd party APIs), web application (data dashboard, React, SQL), edge computing, programmable logic controllers, human-machine interfaces.",
+      "Systems Administration: virtual private servers (web app, VPN server, SQL, Apache), Linux (Ubuntu Server, CentOS), network (office, VPN), single-board computers (configuration/deployment, services, databases, VPN).",
+      "Database Administration: MySQL, MariaDB, cybersecurity (SSL/TLS), multi-source replication."
     ],
     "image": "assets/universal-controls.jpg"
   },
@@ -15,10 +15,15 @@
     "subheader": "Junior Systems Engineer Contract",
     "summary": "8/2018 – 5/2019",
     "details": [
-      "On interdisciplinary team of nine engineers, client was Siemens Gamesa Renewable Energy who invested over $15,000 towards the development of a passive thermography system.",
-      "Developed software services and programs for single-board computer (remote control, data buffering and logging, file transfer, system status lights, sensor calibration (IMU)), interfaced single-board computer with three sensor modules (GPS, IMU, LIDAR) and IR camera, installed/configured OS, troubleshoot PPK filtering with GPS raw data."
+      "On team of nine senior engineering students (CS + ME + EE), client was Siemens Gamesa Renewable Energy who invested over $15,000 towards the development of a damage/defect testing system for wind turbine blades. System was mounted on industry-grade drone to allow remote control.",
+      "Worked with team and stakeholders to determine/define system requirements, researched available technology/solutions, developed prototype system, got client approval for design plan, developed software services/programs for single-board computer/controller (e.g. data buffering/logging, sensor IO), wrote technical documentation for developers and operators, interfaced computer with sensor modules (GPS, IMU, LIDAR) and IR camera, tested system/drone at NREL site, presented system at Senior Design Expo."
     ],
-    "image": "assets/design-center-co.jpg"
+    "image": "assets/design-center-co.jpg",
+    "links": [
+      { "title": "Design Center Colorado", "url": "https://www.colorado.edu/designcenter/" },
+      { "title": "Magazine Article", "url": "https://www.colorado.edu/mechanical/2019/04/22/siemens-gamesa-partners-cu-students-develop-drone-based-monitoring-system-wind-turbines" },
+      { "title": "Siemens Gamesa", "url": "https://www.siemensgamesa.com/en-int" }
+    ]
   },
   {
     "title": "West Safety Services",

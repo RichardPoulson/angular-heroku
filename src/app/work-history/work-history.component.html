@@ -10,7 +10,6 @@
       <div *ngIf="employment.details">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
-            <mat-panel-title></mat-panel-title>
             <mat-panel-description>Details</mat-panel-description>
           </mat-expansion-panel-header>
           <ul *ngFor="let detail of employment.details; index as j;">
@@ -20,7 +19,11 @@
       </div>
     </mat-card-content>
     <div *ngIf="employment.links">
-      <mat-card-actions></mat-card-actions>
+      <mat-card-actions>
+        <div flexFill fxLayout="row wrap" fxLayoutAlign="space-evenly start">
+          <a *ngFor="let link of employment.links; index as k;" mat-raised-button href="{{link.url}}" target="_blank" color="primary">{{link.title}}</a>
+        </div>
+      </mat-card-actions>
     </div>
   </mat-card>
 </div>

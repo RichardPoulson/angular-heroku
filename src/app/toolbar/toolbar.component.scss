@@ -16,12 +16,16 @@
     }
 }
 :host(.dark-theme) {
+    /*
     mat-icon {
         color: mat-theme-color($dark-theme, primary, lighter);
     }
+    */
     mat-toolbar {
         background-color: #333;
-        color: mat-theme-color($dark-theme, primary, lighter, 0.66);
+        #toolbar-title{
+            color: $light-secondary-text;
+        }
     }
 }
 :host:not(.dark-theme) {
@@ -30,12 +34,5 @@
     mat-toolbar {
         position: relative; /* For positioning the pseudo-element */
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
-    }
-    mat-toolbar {
-        background-color: mat-theme-color($light-theme);
-        color: $light-secondary-text;
-    }
-    mat-icon {
-        color: $light-primary-text;
     }
 }

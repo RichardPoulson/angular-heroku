@@ -57,13 +57,16 @@
     }
     #router-links {
         a {
-            color: mat-theme-color($light-theme);
+            color: mat-theme-color($light-theme, primary, default, 0.75);
+        }
+        a:visited {
+            color: mat-theme-color($light-theme, primary, default, 0.75);
         }
         a:focus {
-            border-color: mat-theme-color($light-theme, primary, darker);
+            border-color: mat-theme-color($light-theme);
         }
         a:hover {
-            color: mat-theme-color($light-theme, primary, darker);
+            color: mat-theme-color($light-theme);
         }
         a:active, a.active {
             border-color: mat-theme-color($light-theme, primary, darker);
@@ -86,13 +89,16 @@
     }
     #router-links {
         a {
-            color: mat-theme-color($dark-theme, primary, lighter, 0.66);
+            color: mat-theme-color($dark-theme, primary, default, 0.75);
+        }
+        a:visited {
+            color: mat-theme-color($dark-theme, primary, default, 0.75);
         }
         a:focus {
-            border-color: mat-theme-color($dark-theme, primary, lighter);
+            border-color: mat-theme-color($dark-theme);
         }
         a:hover {
-            color: mat-theme-color($dark-theme, primary, lighter);
+            color: mat-theme-color($dark-theme);
         }
         a:active, a.active {
             border-color: mat-theme-color($dark-theme, primary, lighter);

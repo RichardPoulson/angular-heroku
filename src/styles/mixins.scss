@@ -1,34 +1,29 @@
 @import '~@angular/material/theming';
 
-@mixin apply-mat-theme($config-or-theme, $background-palette: null) {
+@mixin apply-mat-theme($config-or-theme, $color-palette: primary, $hue: default) {
     $config: mat-get-color-config($config-or-theme);
-    $is-dark-theme: map-get($config, is-dark);
-    $primary: map-get($config, primary);
-    $accent: map-get($config, accent);
-    
-    @if $is-dark-theme {
-        color: $light-secondary-text;
-        @if $background-palette == primary {
-            background-color: mat-color($primary);
-            border-color: mat-color($primary, A400);
-        } @else if $background-palette == accent {
-            background-color: mat-color($accent);
-            border-color: mat-color($accent, A400);
-        } @else {
-            background-color: mat-color($mat-gray, 900);
-            border-color: mat-color($mat-gray), 900;
-        }
-    } @else {
-        color: $dark-secondary-text;
-        @if $background-palette == primary {
-            background-color: mat-color($primary);
-            border-color: mat-color($primary, A400);
-        } @else if $background-palette == accent {
-            background-color: mat-color($accent);
-            border-color: mat-color($accent, A400);
-        } @else {
-            background-color: mat-color($mat-gray);
-            border-color: mat-color($mat-gray);
+    $palette: map-get($config, $color-palette);
+
+    background-color: mat-color($palette, $hue);
+    color: mat-contrast($palette, $hue);
+}
+
+@mixin hover-shadow($offset-x, $offset-y, $blur-radius) {
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        box-shadow: $offset-x $offset-y $blur-radius rgba(0, 0, 0, 0.5);
+        opacity: 0; // Hidden by default.
+        transition: opacity 500ms;
+    }
+    &:hover {
+        transform: scale(1.01);
+        &::before {
+            opacity: 1;
         }
     }
 }
