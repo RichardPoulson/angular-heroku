@@ -1,3 +1,7 @@
+@import '~@angular/material/theming';
+@import '../styles/variables.scss';
+@import '../styles/functions.scss';
+
 html, body {
     box-sizing: border-box;
     height: 100%;
@@ -5,4 +9,43 @@ html, body {
 }
 body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+// This is pretty hacky, need to find a way to inform routes of the darkMode state
+app-sidenav:not(.dark-theme) app-home a {
+    transition: trans-color-bgcolor();
+    color: mat-theme-color($light-theme) !important;
+}
+app-sidenav.dark-theme app-home a {
+    transition: trans-color-bgcolor();
+    color: mat-theme-color($dark-theme) !important;
+}
+app-sidenav:not(.dark-theme) app-work-history mat-expansion-panel-header {
+    transition: trans-color-bgcolor(), height 200ms ease-in-out;
+    background-color: mat-theme-color($light-theme) !important;
+    mat-panel-description, .mat-expansion-indicator::after {
+        color: white !important;
+    }
+}
+app-sidenav.dark-theme app-work-history mat-expansion-panel-header {
+    background-color: mat-theme-color($dark-theme) !important;
+    transition: trans-color-bgcolor(), height 200ms ease-in-out;
+    mat-panel-description, .mat-expansion-indicator::after {
+        color: white !important;
+    }
+}
+
+app-sidenav:not(.dark-theme) app-project-history mat-expansion-panel-header {
+    transition: trans-color-bgcolor(), height 200ms ease-in-out;
+    background-color: mat-theme-color($light-theme) !important;
+    mat-panel-description, .mat-expansion-indicator::after {
+        color: white !important;
+    }
+}
+app-sidenav.dark-theme app-project-history mat-expansion-panel-header {
+    background-color: mat-theme-color($dark-theme) !important;
+    transition: trans-color-bgcolor(), height 200ms ease-in-out;
+    mat-panel-description, .mat-expansion-indicator::after {
+        color: white !important;
+    }
 }

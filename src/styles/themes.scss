@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 @import '../styles/variables.scss';
+@import '../styles/functions.scss';
 
 // **Be sure that you only ever include this mixin once!**
 @include mat-core();

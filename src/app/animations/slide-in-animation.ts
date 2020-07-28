@@ -10,7 +10,8 @@ export const slideInAnimation =
           position: 'absolute',
           top: 0,
           left: 0,
-          width: '100%'
+          width: '100%',
+          height: '100%' // use all height so that flex layout looks good (otherwise elements at top until end of animation)
         }),
       ], { optional: true }), // optional needed for ng test
       // Without this query, expansion panels are expanded during animation

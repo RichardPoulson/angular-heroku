@@ -13,7 +13,7 @@ $light-theme:   mat-light-theme((
 ));
 
 // DARK THEME
-$dark-primary: mat-palette($mat-deep-purple);
+$dark-primary: mat-palette($mat-deep-purple, 300, 100, 500);
 $dark-accent:  mat-palette($mat-cyan);
 $dark-warn:    mat-palette($mat-deep-orange);
 $dark-theme:   mat-dark-theme((

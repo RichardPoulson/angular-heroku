@@ -10,16 +10,24 @@
         }
         mat-drawer, mat-drawer-content {
             transition: trans-color-bgcolor();
+            .ng-trigger {
+                height: 100%;
+            }
         }
         mat-drawer-content {
             overflow-x: hidden; // need so that page transition doesn't show scrollbar
         }
     }
     #router-links {
-        list-style: none;
-        padding-left: unset;
-        margin-top: unset;
-        margin-bottom: unset;
+        ul {
+            list-style: none;
+            padding-left: 2ch;
+            margin-top: unset;
+            margin-bottom: unset;
+        }
+        li {
+            margin-bottom: 0.15rem;
+        }
         a {
             transition: trans-color-bgcolor(), border-color 500ms ease-in-out;
             padding-bottom: 1px;
@@ -30,7 +38,11 @@
         a:link, a:visited {
             border-color: rgba($color: #000000, $alpha: 0.0);
         }
-        li {
+        h4 {
+            margin-bottom: 0.15rem;
+            margin-top: 0.3rem;
+        }
+        span.hover-arrow {
             margin-bottom: 8px;
             &::after {
                 padding-left: 1ch;
@@ -53,26 +65,15 @@
         box-shadow: 3px 0px 6px rgba(0, 0, 0, 0.4);
     }
     mat-drawer-container, mat-drawer-content {
-        background-color: #eee
-    }
-    #router-links {
+        background-color: #eee;
         a {
-            color: mat-theme-color($light-theme, primary, default, 0.75);
-        }
-        a:visited {
-            color: mat-theme-color($light-theme, primary, default, 0.75);
-        }
-        a:focus {
-            border-color: mat-theme-color($light-theme);
-        }
-        a:hover {
             color: mat-theme-color($light-theme);
         }
         a:active, a.active {
             border-color: mat-theme-color($light-theme, primary, darker);
             color: mat-theme-color($light-theme, primary, darker);
         }
-        li::after {
+        span.hover-arrow::after {
             color: mat-theme-color($light-theme, primary, darker);
         }
     }
@@ -87,26 +88,22 @@
     .mat-drawer-backdrop.mat-drawer-shown {
         background-color: rgba(189, 189, 189, 0.1);
     }
+    h4 {
+        color: $light-secondary-text;
+    }
     #router-links {
         a {
-            color: mat-theme-color($dark-theme, primary, default, 0.75);
+            color: mat-theme-color($dark-theme);
         }
         a:visited {
-            color: mat-theme-color($dark-theme, primary, default, 0.75);
-        }
-        a:focus {
-            border-color: mat-theme-color($dark-theme);
-        }
-        a:hover {
-            color: mat-theme-color($dark-theme);
+            color: mat-theme-color($dark-theme, primary, darker);
         }
         a:active, a.active {
             border-color: mat-theme-color($dark-theme, primary, lighter);
-            color: #eee
+            color:mat-theme-color($dark-theme, primary, lighter);
         }
-        li::after {
+        span.hover-arrow::after {
             color: mat-theme-color($dark-theme, primary, lighter);
         }
     }
 }
-

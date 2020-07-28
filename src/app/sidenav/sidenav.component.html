@@ -1,28 +1,44 @@
 <!-- mat-drawer-container autosize -->
 <mat-drawer-container id="drawer-container">
   <mat-drawer #drawer mode="side" [opened]="opened">
-    <nav>
-      <ul id="router-links">
+    <nav id="router-links">
+      <span class="hover-arrow mat-body-strong">
+        <a
+        routerLink="/home"
+        routerLinkActive="active"
+        class="mat-body-1"
+        (click)="routeClicked('Home')"
+        >Home</a>
+      </span>
+      <h4>Experience:</h4>
+      <ul >
         <li>
-          <a
+          <span class="hover-arrow mat-body-strong">
+            <a
             routerLink="/work-history"
             routerLinkActive="active"
-            class="mat-body-1"
             (click)="routeClicked('Work')"
-          >Work History</a></li>
+            >Work History</a>
+          </span>
+        </li>
         <li>
-          <a
+          <span class="hover-arrow mat-body-strong">
+            <a
             routerLink="/education-history"
             routerLinkActive="active"
-            class="mat-body-1"
             (click)="routeClicked('Education')"
-          >Education History</a></li>
+            >Education History</a>
+          </span>
+        </li>
         <li>
-          <a
+          <span class="hover-arrow">
+            <a
             routerLink="/project-history"
             routerLinkActive="active"
             (click)="routeClicked('Projects')"
-            >Project History</a></li>
+            >Project History</a>
+          </span>
+        </li>
       </ul>
     </nav>
   </mat-drawer>
@@ -32,5 +48,6 @@
       <router-outlet #outlet="outlet"></router-outlet>
     </div>
   </mat-drawer-content>
+
 </mat-drawer-container>
   

@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import '../../styles/variables.scss';
+@import '../../styles/functions.scss';
+@import '../../styles/mixins.scss';
+
+:host {
+    #home-container {
+        max-width: 960px;
+        height: 100%;
+        margin: 0 auto 0 auto;
+        padding: 1rem;
+        .mat-display-2 {
+            margin-bottom: 1rem;
+        }
+    }
+}
