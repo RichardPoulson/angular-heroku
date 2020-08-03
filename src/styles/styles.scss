@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 @import '../styles/variables.scss';
 @import '../styles/functions.scss';
+@import '../styles/mixins.scss';
 
 html, body {
     box-sizing: border-box;
@@ -11,41 +12,107 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// This is pretty hacky, need to find a way to inform routes of the darkMode state
-app-sidenav:not(.dark-theme) app-home a {
-    transition: trans-color-bgcolor();
-    color: mat-theme-color($light-theme) !important;
-}
-app-sidenav.dark-theme app-home a {
-    transition: trans-color-bgcolor();
-    color: mat-theme-color($dark-theme) !important;
-}
-app-sidenav:not(.dark-theme) app-work-history mat-expansion-panel-header {
-    transition: trans-color-bgcolor(), height 200ms ease-in-out;
-    background-color: mat-theme-color($light-theme) !important;
-    mat-panel-description, .mat-expansion-indicator::after {
-        color: white !important;
-    }
-}
-app-sidenav.dark-theme app-work-history mat-expansion-panel-header {
-    background-color: mat-theme-color($dark-theme) !important;
-    transition: trans-color-bgcolor(), height 200ms ease-in-out;
-    mat-panel-description, .mat-expansion-indicator::after {
-        color: white !important;
+mat-icon {
+    transition: all 200ms ease-out;
+    &:hover {
+        transform: scale(1.2);
     }
 }
 
-app-sidenav:not(.dark-theme) app-project-history mat-expansion-panel-header {
-    transition: trans-color-bgcolor(), height 200ms ease-in-out;
-    background-color: mat-theme-color($light-theme) !important;
-    mat-panel-description, .mat-expansion-indicator::after {
-        color: white !important;
+mat-expansion-panel-body {
+    height: 200px !important;
+    max-height: 200px !important;
+}
+
+app-sidenav {
+    mat-drawer {
+        transition-property: background-color;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+    }
+    mat-drawer-content {
+        transition-property: transform, margin-left, margin-right, background-color !important;
+        transition-duration: 500ms !important;
+        transition-timing-function: ease-in-out !important;
+    }
+    app-home {
+        h1, p, a, li {
+            transition-property: color;
+            transition-duration: 500ms;
+            transition-timing-function: ease-in-out;
+        }
+    }
+    app-work-history, app-education-history, app-project-history {
+        mat-card {
+            transition-property: box-shadow, color, background-color !important;
+            transition-duration: 500ms !important;
+            transition-timing-function: ease-in-out !important;
+            &::before {
+                transition: opacity 500ms ease-in-out;
+            }
+            mat-card-subtitle {
+                transition: color 500ms ease-in-out;
+            }
+        }
+        mat-expansion-panel, mat-expansion-panel-header {
+            transition-property: color, background-color, transform !important;
+            transition-duration: 500ms !important;
+            transition-timing-function: ease-out !important;
+        }
+        mat-expansion-panel-content {
+            max-height: 400px;
+            overflow-y: scroll;
+        }
     }
 }
-app-sidenav.dark-theme app-project-history mat-expansion-panel-header {
-    background-color: mat-theme-color($dark-theme) !important;
-    transition: trans-color-bgcolor(), height 200ms ease-in-out;
-    mat-panel-description, .mat-expansion-indicator::after {
-        color: white !important;
+app-sidenav:not(.dark-theme) {
+    app-home {
+        a {
+            color: mat-theme-color($light-theme) !important;
+        }
+    }
+    app-work-history, app-education-history, app-project-history {
+        mat-card {
+            @include hover-shadow(4px, 4px, 8px);
+        }
+        mat-expansion-panel:hover {
+            transform: scale(1.02);
+        }
+        mat-expansion-panel-header {
+            background-color: mat-theme-color($light-theme) !important;
+            mat-panel-description, .mat-expansion-indicator::after {
+                color: white !important;
+            }
+            &:hover {
+                background-color: mat-theme-color($light-theme, accent) !important;
+            }
+        }
+    }
+}
+app-sidenav.dark-theme {
+    app-home {
+        a {
+            color: mat-theme-color($dark-theme) !important;
+        }
+    }
+    app-work-history, app-project-history {
+        mat-card {
+            a.mat-primary {
+                background-color: mat-theme-color($dark-theme, primary, default, 0.5) !important;
+                &:hover {
+                    background-color: mat-theme-color($dark-theme) !important;
+                }
+            }
+            background-color: #333 !important;
+        }
+        mat-expansion-panel-header {
+            background-color: mat-theme-color($dark-theme, primary, default, 0.5) !important;
+            &:hover {
+                background-color: mat-theme-color($dark-theme) !important;
+            }
+            mat-panel-description, .mat-expansion-indicator::after {
+                color: white !important;
+            }
+        }
     }
 }

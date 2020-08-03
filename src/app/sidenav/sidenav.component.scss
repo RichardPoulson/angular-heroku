@@ -1,15 +1,13 @@
 @import '../../styles/variables.scss';
 @import '../../styles/functions.scss';
+@import '../../styles/mixins.scss';
 
 :host {
     mat-drawer-container {
-        transition: trans-color-bgcolor();
-        //height: calc(100vh - #{$toolbar-height} - #{$footer-height});
         mat-drawer {
             padding: 1rem; // don't add padding to mat-drawer-content, or it messes with scrollbar
         }
         mat-drawer, mat-drawer-content {
-            transition: trans-color-bgcolor();
             .ng-trigger {
                 height: 100%;
             }
@@ -29,7 +27,6 @@
             margin-bottom: 0.15rem;
         }
         a {
-            transition: trans-color-bgcolor(), border-color 500ms ease-in-out;
             padding-bottom: 1px;
             outline: none;
             text-decoration: none;
@@ -66,8 +63,14 @@
     }
     mat-drawer-container, mat-drawer-content {
         background-color: #eee;
-        a {
-            color: mat-theme-color($light-theme);
+        a:link {
+            color: mat-theme-color($light-theme, accent);
+        }
+        a:visited {
+            color: mat-theme-color($light-theme, primary, default, 0.2);
+        }
+        a:hover {
+            color: mat-theme-color($light-theme, accent);
         }
         a:active, a.active {
             border-color: mat-theme-color($light-theme, primary, darker);
@@ -96,7 +99,7 @@
             color: mat-theme-color($dark-theme);
         }
         a:visited {
-            color: mat-theme-color($dark-theme, primary, darker);
+            color: mat-theme-color($dark-theme, primary, default, 0.8);
         }
         a:active, a.active {
             border-color: mat-theme-color($dark-theme, primary, lighter);

@@ -16,14 +16,9 @@
     }
 }
 :host(.dark-theme) {
-    /*
-    mat-icon {
-        color: mat-theme-color($dark-theme, primary, lighter);
-    }
-    */
     mat-toolbar {
-        background-color: #333;
-        #toolbar-title{
+        background-color: #444;
+        #toolbar-title {
             color: $light-secondary-text;
         }
     }

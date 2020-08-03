@@ -22,12 +22,12 @@
     #footer {
         box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.5);
         background-color: mat-theme-color($light-theme);
-        color: $light-secondary-text;
+        color: $light-primary-text;
     }
 }
 :host(.dark-theme) {
     #footer {
-        background-color: #333;
-        color: mat-theme-color($dark-theme, primary, lighter);
+        background-color: #444;
+        color: $light-secondary-text;
     }
 }
